@@ -23,7 +23,7 @@ class RedditApi{
         }
         const posts = await response.json();
         console.log(posts);
-        return posts;
+        return posts; 
     }
 }
 
