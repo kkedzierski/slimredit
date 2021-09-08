@@ -1,8 +1,6 @@
 
-class RedditApi{
 
-
-    async searchPosts(query) {
+   export const searchPosts = async query => {
         let url = `https://www.reddit.com/search.json?q=${query}`;
         const response = await fetch(url);
         if (!response.ok) {
@@ -10,11 +8,10 @@ class RedditApi{
             throw new Error(message);
         }
         const posts = await response.json();
-        console.log(posts);
         return posts;
       }
 
-    async changeCategory(categoryName){
+    export const changeCategory = async categoryName => {
         let url = `https://www.reddit.com/r/${categoryName}.json`;
         const response = await fetch(url);
         if (!response.ok) {
@@ -22,9 +19,5 @@ class RedditApi{
             throw new Error(message);
         }
         const posts = await response.json();
-        console.log(posts);
         return posts; 
     }
-}
-
-export default RedditApi;
