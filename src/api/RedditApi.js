@@ -11,7 +11,7 @@
         return posts;
       }
 
-    export const changeCategory = async categoryName => {
+    export const searchCategory = async categoryName => {
         let url = `https://www.reddit.com/r/${categoryName}.json`;
         const response = await fetch(url);
         if (!response.ok) {

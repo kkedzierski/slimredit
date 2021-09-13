@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk  } from '@reduxjs/toolkit';
-import { searchPosts } from '../../api/RedditApi';
+import { searchPosts, searchCategory } from '../../api/RedditApi';
 
 export const searchPostsByQuery = createAsyncThunk(
     'search/showResult',
@@ -9,16 +9,29 @@ export const searchPostsByQuery = createAsyncThunk(
     }
 )
 
+export const searchPostsByCategoryName = createAsyncThunk(
+  'search/showResultByCategory',
+  async (categoryName, thunkAPI) =>{
+    const posts = await searchCategory(categoryName);
+    return posts;
+  }
+)
 
 const searchSlice = createSlice({
     name: 'search',
     initialState: {
         searchResult: {},
+        isCategory: false,
         status: ''
     },
     reducers: {
         showResult: (state, action) => {
-            state.searchResult = action.payload
+            state.searchResult = action.payload;
+            state.isCategory = false;
+        },
+        showResultByCategory: (state, action) => {
+            state.searchResult = action.payload;
+            state.isCategory = true;
         }
     },
     extraReducers: {
@@ -28,17 +41,29 @@ const searchSlice = createSlice({
         [searchPostsByQuery.fulfilled]: (state, action) => {
           state.status = 'succeeded';
           state.searchResult = action.payload;
+          state.isCategory = false;
+        },
+        [searchPostsByCategoryName.pending]: (state, action) => {
+          state.status = 'loading';
+        },
+        [searchPostsByCategoryName.fulfilled]: (state, action) => {
+          state.status = 'succeeded';
+          state.searchResult = action.payload;
+          state.isCategory = true;
         }
       }
 });
 
-//export const selectSearchResult = (state) => state.searchResult;
 export const selectSearchResult = state => state = {
     ...state,
     searchResult: {
         ...state.searchResult
+    },
+    isCategory: {
+      ...state.isCategory
     }
 }
 
-export const {showResult} = searchSlice.actions;
+
+export const {showResult, showResultByCategory} = searchSlice.actions;
 export default searchSlice.reducer;

@@ -1,0 +1,82 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    padding: 3%;
+    margin: 3%;
+    -webkit-box-shadow: 8px 8px 11px -10px #000; 
+    box-shadow: 8px 8px 11px -10px #000;
+    background-color: #fff;
+}
+
+
+.addSubredditContainer{
+    background-color: #fff;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 8px;
+    -webkit-box-shadow: 8px 8px 11px -10px #000; 
+    box-shadow: 8px 8px 11px -10px #000;
+  }
+  
+  .addSubredditBtn{
+    font-size: 8px;
+    margin-left: 10px;
+    padding: 5px;
+    background: #2196f3;
+    border: 1px solid #2196f3;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .addSubredditBtn:hover{
+    background: #1f85e2;
+  }
+
+  .subredditBody{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .deleteSubreddit,
+  .chooseSubreddit{
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    padding: 5px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: white;
+    font-weight: bold;
+  }
+
+  .deleteSubreddit{
+    padding: 0px;
+    width: auto;
+  }
+
+  .deleteSubreddit:hover,
+  .chooseSubreddit:hover{
+    cursor: pointer;
+    background-color: #dff;
+  }
+
+  .chooseSubredditContainer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }

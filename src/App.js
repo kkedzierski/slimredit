@@ -1,12 +1,11 @@
 import React from 'react';
-import { FcAbout } from 'react-icons/fc';
 import Search from './features/search/Search';
 import Post from './features/posts/Post';
-import Tooltip from "react-simple-tooltip"
 import './App.css';
-import Subredit from './features/Subredits/Subredit';
+import Subreddit from './features/Subreddits/Subreddit';
 import Comment from './features/comments/Comment'
 import Logo from './components/Logo/Logo';
+import AddSubreddit from './features/Subreddits/AddSubreddit';
 
 function App() {
   return (
@@ -14,15 +13,12 @@ function App() {
       <div className="navbar">
         <Logo />
         <Search />
-        <Tooltip 
-          placement={'bottom'}
-          content="This is slim version of reddit.com only for read">
-          <FcAbout className="about"/>
-        </Tooltip>
+
       </div>
+      <AddSubreddit />
       <div class ="body">
         <Post />
-        <Subredit />
+        <Subreddit />
       </div>
       <div class = "sidemenu subredits">
         
