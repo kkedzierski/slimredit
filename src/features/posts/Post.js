@@ -7,7 +7,6 @@ import styles from './Post.module.css';
 export default function Post() {
     let resultSearch = useSelector(selectSearchResult);
     resultSearch = resultSearch.search.searchResult;
-
     let isPicture = false;
     let createdAt = 0;
 
@@ -17,7 +16,7 @@ export default function Post() {
                 {resultSearch.data.children.map((post, i) => {
                     isPicture = post.data.url.slice(-4)[0] === '.' || post.data.url.slice(-5)[0] === '.' ? true : false;
                     createdAt = whenCreated(post.data.created);
-                    console.log(post);
+                    
                     return(
                         <div className={styles.wrap}>
                             <div className={styles.votes}>
