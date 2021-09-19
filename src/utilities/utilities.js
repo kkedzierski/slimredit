@@ -15,3 +15,13 @@ export const whenCreated = (num) => {
     
     return days;
 }
+
+/**
+* Function check given URL is picture
+* @author   jfriend00
+* @param    {String} pictureURL
+* @return   {Boolean} return true if it is picture else return false
+*/
+export const isPicture = (pictureURL) => {
+    return(pictureURL.match(/\.(jpeg|jpg|gif|png)$/) != null);
+}
