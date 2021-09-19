@@ -1,7 +1,7 @@
 import styles from './Subreddits.module.css';
-import {useState} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { selectSubreddits, removeSubreddit } from './subredditSlice';
+import {removePostDetail} from '../posts/postSlice';
 import { searchPostsByCategoryName } from '../search/searchSlice';
 import { FcEmptyTrash } from 'react-icons/fc'
 
@@ -16,7 +16,7 @@ export default function Subreddit () {
             el.style.backgroundColor = '#fff';
         });
         e.target.style.backgroundColor = '#ddd';
-
+        dispatch(removePostDetail())
         dispatch(searchPostsByCategoryName(subreddit))
     }
 
