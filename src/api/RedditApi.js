@@ -21,3 +21,14 @@
         const posts = await response.json();
         return posts; 
     }
+
+    export const getPostDetail = async postPermaink => {
+        const url = `https://www.reddit.com${postPermaink}.json`;
+        const response = await fetch(url);
+        if (!response.ok) {
+            const message = `An error has occured: ${response.status}`;
+            throw new Error(message);
+        }
+        const postDetail = await response.json();
+        return postDetail; 
+    }

@@ -1,3 +1,43 @@
+.loader{
+    margin-top: 20px;
+}
+
+.container{
+    width: 100%;
+}
+
+.thumbnail{
+    object-fit: contain;
+}
+
+.titleLinkContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.title{
+    padding: 20px;
+}
+
+.description{
+    white-space:pre-wrap;
+}
+
+.errorContainer{
+    margin-top: 20px;
+    padding: 10px;
+    color: white;
+    background-color: darkorange;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.errorIcon{
+    font-size: 20px;
+    padding: 10px;
+}
+
 .wrap{
     display: flex;
     padding: 3%;
@@ -5,6 +45,14 @@
     -webkit-box-shadow: 8px 8px 11px -10px #000; 
     box-shadow: 8px 8px 11px -10px #000;
     background-color: #fff;
+}
+.postBody{
+    display: flex;
+    flex-direction: row;
+}
+.postComments{
+    display: flex;
+    flex-direction: column;
 }
 
 .votes{
@@ -45,4 +93,5 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    cursor: pointer;
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import Search from './features/search/Search';
-import Post from './features/posts/Post';
+import PostSwitcher from './features/posts/PostSwitcher';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import './App.css';
 import Subreddit from './features/Subreddits/Subreddit';
-import Comment from './features/comments/Comment'
 import Logo from './components/Logo/Logo';
 import AddSubreddit from './features/Subreddits/AddSubreddit';
 
@@ -17,7 +17,7 @@ function App() {
       </div>
       <AddSubreddit />
       <div class ="body">
-        <Post />
+        <PostSwitcher />
         <Subreddit />
       </div>
       <div class = "sidemenu subredits">
