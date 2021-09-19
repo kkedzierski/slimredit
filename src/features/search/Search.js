@@ -2,14 +2,25 @@ import { useDispatch } from "react-redux";
 import { useState } from 'react'; 
 import { FaSearch } from 'react-icons/fa';
 import { searchPostsByQuery, searchPostsByCategoryName } from './searchSlice.js';
+import { removePostDetail, removePostStatus } from '../posts/postSlice';
 import styles from './Search.module.css';
 
 export default function Post () {
     const dispatch = useDispatch();
     const [searchText, setSearchText] = useState('');
+    const [initial, setInitial] = useState(true);
     const [byCategory, setByCategory] = useState(false);
 
+    const initialSearch = (term) => {
+        dispatch(searchPostsByQuery(term));
+        setInitial(false);
+    }
+    if(initial)
+        initialSearch('programming');
+    
     const submitSearch = (searchTerm) => {
+        dispatch(removePostDetail());
+        dispatch(removePostStatus());
         if(byCategory){
             dispatch(searchPostsByCategoryName(searchTerm))
         }else{
