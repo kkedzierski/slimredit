@@ -38,6 +38,9 @@ const searchSlice = createSlice({
         [searchPostsByQuery.pending]: (state, action) => {
           state.status = 'loading';
         },
+        [searchPostsByQuery.rejected]: (state, action) => {
+          state.status = 'error';
+        },
         [searchPostsByQuery.fulfilled]: (state, action) => {
           state.status = 'succeeded';
           state.searchResult = action.payload;
@@ -45,6 +48,9 @@ const searchSlice = createSlice({
         },
         [searchPostsByCategoryName.pending]: (state, action) => {
           state.status = 'loading';
+        },
+        [searchPostsByCategoryName.rejected]: (state, action) => {
+          state.status = 'errorCategory';
         },
         [searchPostsByCategoryName.fulfilled]: (state, action) => {
           state.status = 'succeeded';
