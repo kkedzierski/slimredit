@@ -1,55 +1,74 @@
 import { useSelector } from "react-redux";
-import { selectSearchResult } from "../search/searchSlice"; 
-import { whenCreated } from "../../utilities/utilities";
+import { selectPostDetail } from "./postSlice"; 
+import { whenCreated, isPicture } from "../../utilities/utilities";
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 import styles from './Post.module.css';
+import withoutThumbnail from '../../images/noThumbnail.jpg' 
+import Comments from "../../components/Comments/Comments";
 
 export default function Post() {
-    let resultSearch = useSelector(selectSearchResult);
-    resultSearch = resultSearch.search.searchResult;
-    let isPicture = false;
+    let postDetails = useSelector(selectPostDetail);
+    let comments = postDetails.postDetail.postDetail[1].data.children;
+    postDetails = postDetails.postDetail.postDetail[0].data.children;
+    let picture = false;
+    let thumbnail = withoutThumbnail;
     let createdAt = 0;
 
-    if(Object.keys(resultSearch).length !== 0 && typeof resultSearch !== 'undefined'){
+    if(Object.keys(postDetails).length !== 0 && typeof postDetails !== 'undefined'){
+        
         return(
             <div className={styles.container}>
-                {resultSearch.data.children.map((post, i) => {
-                    isPicture = post.data.url.slice(-4)[0] === '.' || post.data.url.slice(-5)[0] === '.' ? true : false;
-                    createdAt = whenCreated(post.data.created);
-                    
+               {postDetails.map((detail, i) => {
+                     picture = isPicture(detail.data.url);
+                     thumbnail = detail.data.thumbnail === 'self' ? thumbnail : detail.data.thumbnail;
+                     createdAt = whenCreated(detail.data.created);
                     return(
-                        <div className={styles.wrap}>
+                        <div className={styles.wrap} key={i}>
+                            
                             <div className={styles.votes}>
                                 <FaArrowUp />
-                                <p className={styles.voteNumber}>{post.data.ups}</p>
+                                <p className={styles.voteNumber}>{detail.data.ups}</p>
                                 <FaArrowDown />
                             </div>
-                            <div>   
-                                <div className={styles.postBody} key={i}>
-                                    <h3 className={styles.title}>{post.data.title}</h3>
-                                    {isPicture ?  <img 
+                            <div className={styles.postBody}>
+                                <div className={styles.titleLinkContainer}>  
+                                    <h3 className={styles.title}>{detail.data.title}</h3>
+                                    <a 
+                                        href={detail.data.url} 
+                                        target="_blank" 
+                                        rel="noreferrer"
+                                    >
+                                        <img 
+                                            className={styles.thumbnail} 
+                                            style={thumbnail === withoutThumbnail ? {"width" : "100%"} : {}}
+                                            src={thumbnail} 
+                                            alt={detail.data.title}
+                                        />
+                                    </a>
+                                </div>
+                                {picture ?  <img 
                                         className={styles.image} 
-                                        src={post.data.url} 
+                                        src={detail.data.url} 
                                         alt="post"
                                     />: null}
-                                    <div className={styles.authorContainer}>
-                                        <a className={styles.subreddit} href="/">{post.data.subreddit}</a>
-                                        <p className={styles.author}>posted by {post.data.author}</p>
-                                        <p className={styles.createdAt}> created {createdAt} days ago</p>
-                                    </div>
+                                <div className={styles.description}>
+                                    {detail.data.selftext}
+                                </div>
+
+                                <div className={styles.authorContainer}>
+                                    <a className={styles.subreddit} href="/">{detail.data.subreddit}</a>
+                                    <p className={styles.author}>posted by {detail.data.author}</p>
+                                    <p className={styles.createdAt}> created {createdAt} days ago</p>
+                                </div>
+                                <div className={styles.postComments}>
+                                    <Comments comments={comments}/>
                                 </div>
                             </div>
                         </div>
                     )
                 })}
-            </div>
-        )
-    }else{
-        return(
-            <div>
-                Loading...
+                
             </div>
         )
     }
-    
 }
