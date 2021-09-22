@@ -12,15 +12,17 @@
 
 .titleLinkContainer{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
 }
 .title{
     padding: 20px;
+    text-align: center;
 }
 
 .description{
-    white-space:pre-wrap;
+    white-space: pre-wrap;
 }
 
 .errorContainer{
@@ -40,12 +42,14 @@
 
 .wrap{
     display: flex;
-    padding: 3%;
-    margin: 5%;
+    padding: 2%;
+    margin: 2%;
     -webkit-box-shadow: 8px 8px 11px -10px #000; 
     box-shadow: 8px 8px 11px -10px #000;
     background-color: #fff;
 }
+
+
 .postBody{
     display: flex;
     flex-direction: row;
@@ -87,6 +91,10 @@
     font-size: 12px;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+.authorContainer > *{
+    padding: 2px;
 }
 
 .postBody{
@@ -103,4 +111,25 @@
 }
 .commentLength  > *{
     padding: 3px;
+}
+
+.postBodyWrapper{
+    width: 100%;
+}
+
+@media only screen and (max-width: 795px){
+    .wrap{
+        display: block;
+    }
+    .votes{
+        display: none;
+        font-size: 10px;
+        padding: 5px;
+    }
+    .voteNumber{
+        font-size: 10px;
+    }
+    .title{
+        padding: 5px;
+    }
 }

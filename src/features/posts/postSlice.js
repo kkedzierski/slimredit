@@ -13,7 +13,6 @@ const postSlice = createSlice({
     name: 'postDetail',
     initialState: {
         postDetail: {},
-        commentLength: 0,
         status: ''
     },
     reducers: {

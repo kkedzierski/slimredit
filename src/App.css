@@ -7,18 +7,24 @@ body{
 
 .navbar{
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0 8px 11px -10px #000;
   background-color: #fff;
   -webkit-box-shadow: 0 8px 11px -10px #000; 
   box-shadow: 0 8px 11px -10px #000;
+  align-items: flex-start;
+}
+
+.navbar > *{
+  margin: 2%;
 }
 
 @media only screen and (max-width: 500px){
   .navbar{
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 }
 
