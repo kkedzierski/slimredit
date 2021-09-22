@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { selectSearchResult } from "../search/searchSlice"; 
 import { whenCreated, isPicture } from "../../utilities/utilities";
-import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { FaArrowUp, FaArrowDown, FaRegCommentAlt } from 'react-icons/fa';
 import { renderPostByPermalink } from './postSlice.js';
 
 import styles from './Post.module.css';
@@ -11,8 +11,10 @@ export default function Post() {
     let resultSearch = useSelector(selectSearchResult);
     
     resultSearch = resultSearch.search.searchResult;
+    console.log(resultSearch);
     let picture = false;
     let createdAt = 0;
+
     if(Object.keys(resultSearch).length !== 0 && typeof resultSearch !== 'undefined'){
         return(
             <div className={styles.container}>
@@ -41,8 +43,13 @@ export default function Post() {
                                     />: null}
                                     <div className={styles.authorContainer}>
                                         <a className={styles.subreddit} href="/">{post.data.subreddit}</a>
-                                        <p className={styles.author}>posted by {post.data.author}</p>
+                                        <p className={styles.author}>posted by <i> {post.data.author} </i> </p>
                                         <p className={styles.createdAt}> created {createdAt} days ago</p>
+                                        <div className={styles.commentLength}>
+                                            <FaRegCommentAlt/>
+                                            <p>{post.data.num_comments}</p>
+                                        </div>
+                                       
                                     </div>
                                 </div>
                             </div>

@@ -95,3 +95,12 @@
     width: 100%;
     cursor: pointer;
 }
+.commentLength{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.commentLength  > *{
+    padding: 3px;
+}

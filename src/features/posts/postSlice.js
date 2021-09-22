@@ -9,11 +9,11 @@ export const renderPostByPermalink = createAsyncThunk(
     }
 )
 
-
 const postSlice = createSlice({
     name: 'postDetail',
     initialState: {
         postDetail: {},
+        commentLength: 0,
         status: ''
     },
     reducers: {
@@ -48,5 +48,5 @@ export const selectPostDetail = state => state = {
     }
 }
 
-export const {renderPostDetail, removePostDetail, removePostStatus} = postSlice.actions;
+export const {renderPostDetail, removePostDetail, removePostStatus, renderCommentLength} = postSlice.actions;
 export default postSlice.reducer;
