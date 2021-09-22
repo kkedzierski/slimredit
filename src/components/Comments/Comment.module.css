@@ -31,4 +31,5 @@
 .description{
     background-color: #eff;
     padding: 10px;
+    overflow-x: hidden;
 }

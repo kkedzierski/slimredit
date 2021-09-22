@@ -29,7 +29,7 @@ export default function Post() {
                                 <p className={styles.voteNumber}>{post.data.ups}</p>
                                 <FaArrowDown />
                             </div>
-                            <div>   
+                                <div className={styles.postBodyWrapper}>   
                                 <div 
                                     className={styles.postBody} 
                                     key={i}
