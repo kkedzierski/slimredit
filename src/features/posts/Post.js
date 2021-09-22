@@ -30,7 +30,10 @@ export default function Post() {
                                 <p className={styles.voteNumber}>{detail.data.ups}</p>
                                 <FaArrowDown />
                             </div>
-                            <div className={styles.postBody}>
+                            <div 
+                                className={styles.postBody}
+                                style={{"cursor": "default"}}
+                            >
                                 <div className={styles.titleLinkContainer}>  
                                     <h3 className={styles.title}>{detail.data.title}</h3>
                                     <a 
@@ -57,7 +60,7 @@ export default function Post() {
 
                                 <div className={styles.authorContainer}>
                                     <a className={styles.subreddit} href="/">{detail.data.subreddit}</a>
-                                    <p className={styles.author}>posted by {detail.data.author}</p>
+                                    <p className={styles.author}>posted by <i> {detail.data.author} </i> </p>
                                     <p className={styles.createdAt}> created {createdAt} days ago</p>
                                 </div>
                                 <div className={styles.postComments}>
