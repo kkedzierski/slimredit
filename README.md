@@ -1,7 +1,7 @@
 # Slimreddit 
 ### The application allow users to view and search posts and comments provided by the simplified reddit API.
 
-## Application available at https://slimreddit.netlify.app/
+#### Application available at https://slimreddit.netlify.app/
 
 ### Technologies
 
