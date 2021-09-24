@@ -1,44 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Slimreddit 
+### The application allow users to view and search posts and comments provided by the simplified reddit API.
 
-## Available Scripts
+### Technologies
 
-In the project directory, you can run:
+***
 
-### `yarn start`
+* HTML
+* CSS
+* JavaScript
+* React
+* Redux
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Instalation
 
-### `yarn test`
+***
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After pull respository to open project on localhost write in console:  
+```npm start```
 
-### `yarn build`
+### Project appearance
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+***
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### Main page  
+![slireddit - main page](https://user-images.githubusercontent.com/47725233/134656799-9a308ad3-7ffe-40c7-8872-d7ddb77b7c11.png)
+  
+#### Post detail after click  
+![slimreddit - post detail](https://user-images.githubusercontent.com/47725233/134656912-27a693c9-ed0a-46dc-a2d0-fbe649bdbfc6.png)
+  
+#### Add subreddit feature
+![slimreddit - add subbreddit feature](https://user-images.githubusercontent.com/47725233/134656984-3fe6fe67-7973-4afa-b454-9c881ba2555b.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Choose added subreddit
+![slimreddit - Choose added subreddit](https://user-images.githubusercontent.com/47725233/134657058-1f547505-53ca-4d06-bbc0-c175bc61a4e1.png)
 
-### `yarn eject`
+#### lighthouse status
+![slimreddit - Lighthouse](https://user-images.githubusercontent.com/47725233/134657205-458f3894-3356-4b83-944a-9d5056f25f75.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Future solutions
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+***
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Add possibility to login and save choosen subreddits to future check
+* Add test Jest, Enzyme, and Selenium - i dont know how to test createAsyncThunk spend for this many hours...
+* Add more accessibility for visually impaired
