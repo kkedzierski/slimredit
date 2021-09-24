@@ -1,7 +1,7 @@
 # Slimreddit 
 ### The application allow users to view and search posts and comments provided by the simplified reddit API.
 
-### Application available at https://slimreddit.netlify.app/
+## Application available at https://slimreddit.netlify.app/
 
 ### Technologies
 
@@ -43,7 +43,7 @@ After pull respository to open project on localhost write in console:
 #### lighthouse status
 ![slimreddit - Lighthouse](https://user-images.githubusercontent.com/47725233/134657205-458f3894-3356-4b83-944a-9d5056f25f75.png)
 
-g
+
 
 ### Future solutions
 
