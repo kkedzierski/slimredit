@@ -19,6 +19,8 @@
 ***
 
 After pull respository to open project on localhost write in console:  
+```npm install```
+And then
 ```npm start```
 
 ### Project appearance
