@@ -4,8 +4,8 @@
   "theme_color": "#000000",
   "background_color": "#000000",
   "display": "standalone",
-  "scope": ".",
-  "start_url": "/",
+  "scope": "https://slimreddit.netlify.app/",
+  "start_url": "https://slimreddit.netlify.app/",
   "icons": [
     {
       "src": "favicon.ico",
